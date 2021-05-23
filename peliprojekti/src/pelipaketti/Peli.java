@@ -11,10 +11,8 @@ public class Peli {
 		// Tähän alkutietoja, kuten muuttujia
 		
 		String nimi; 
-		
 		Scanner lukija = new Scanner(System.in); //tekstin lukemiseen
 		Scanner laskija = new Scanner(System.in); // lukujen lukemiseen
-		
 		
 		// Varsinainen koodi alkaa
 		
