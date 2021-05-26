@@ -314,7 +314,7 @@ public class Peli {
 			        ekaTutkinto = "Lukio";
 		    	break;
 		        case 2:
-		        	System.out.println("\n Hieno valinta! Ammattikoulussa valitaan tentti, jossa kysytään seuraavia asioita:\n");
+		        	System.out.println("\n Hieno valinta! Ammattikoulussa järjestetään tentti, jossa kysytään seuraavia asioita:\n");
 		        	tentti();
 		        	System.out.println("\nHienoa! Valmistuit haluamaasi ammattiin ja järjestit huikeat valmistujaisjuhlat!");
 		        	ekaTutkinto = "Ammattikoulu";
@@ -399,7 +399,7 @@ public class Peli {
 			    tikoTyö = "Yrittäjä";
 			break;
 	    	case 3:
-		    	System.out.println("\nMites sulla noi liittymä asiat oikein on?");
+		    	System.out.println("\nMites sulla noi liittymäasiat oikein on?");
 			    tikoTyö = "Myyjä";
 			    peliOhi();
 	        }
