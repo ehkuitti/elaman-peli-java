@@ -20,7 +20,7 @@ public class Peli {
 		String sosiaaliTyö;
 		Scanner lukija = new Scanner(System.in); // tekstin lukemiseen
 		Scanner laskija = new Scanner(System.in); // lukujen lukemiseen
-		
+
 		// Varsinainen koodi alkaa
 		System.out.println("Tervetuloa pelaamaan Tomte™ Corperationin®\n\n\t\tELÄMÄN_PELIÄ©    :)\n");
 		System.out.print("Anna nimesi: ");
@@ -44,6 +44,8 @@ public class Peli {
 				työ2 = työura2();
             }
             cursedRuletti();
+            lopetus();
+            peliOhi();
             
 		} else if (syntymäpaikka == "Oulu") { // Oulun polku metodeina
 			lapsuus();
@@ -59,6 +61,8 @@ public class Peli {
             	työ2 = työura2();
             }
             cursedRuletti();
+            lopetus();
+            peliOhi();
                         
 		} else { // Jokaisen kysymyksen 3. vaihtoehto lopettaa pelin
 			System.out.print("\nEi kai nyt kukaan täysijärkinen haluaisi Turkuun syntyä...");
@@ -70,6 +74,74 @@ public class Peli {
 
 	}
 	
+	private static void lopetus() {
+        System.out.println("\n\nSelvisit elämäsi loppuun asti, onnittelut ja pitkää ikää!\n\n\t*VOITIT PELIN*");
+	}
+
+	private static void tentti() {
+
+
+		int pistemäärä = 0;
+		int vastaus = 0;
+
+		Scanner laskija = new Scanner (System.in);
+
+	    System.out.println("\nKuinka monta norsulajia on olemassa?\n1) 2\n2) 3\n3) 5");
+	    vastaus = laskija.nextInt();
+
+	    if (vastaus == 2) {
+	    	System.out.println("\nOikein! Oli muuten helppo :]");
+	    	pistemäärä++;
+	    } else {
+	    	System.out.println("\nVäärin! Eikö tämä nyt ole ihan yleistietoa... ¯\\_(ツ)_/¯");
+	    }
+	    
+	    System.out.println("\nKetä Disney-prinsessoista nähdään elokuvissa vähiten? \n1) Ruusunen\n2) Ariel\n3) Lumikki");
+	    vastaus = laskija.nextInt();
+
+	    if (vastaus == 1) {
+	    	System.out.println("\nOikein! Läksyt selvästikin luettu!");
+	    	pistemäärä++;
+	    } else {
+	    	System.out.println("\nVäärin! Matikan kirja sivut 15-78. KERTAA!");
+	    }
+	    System.out.println("\nIlman laskinta: Paljonko on 30% 546:sta? \n1) 163.8\n2) 166.6\n3) 173.95");
+	    vastaus = laskija.nextInt();
+
+	    if (vastaus == 1) {
+	    	System.out.println("\nOikein! Matikkapäätäkin löytyy!");
+	    	pistemäärä++;
+	    } else {
+	    	System.out.println("\nVäärin! Tämähän oli helppo!");
+	    }
+	    System.out.println("\nMaantietoa: Mikä on Tansanian pääkaupunki? \n1) Mbeya\n2) Dar es Salaam\n3) Dodoma");
+	    vastaus = laskija.nextInt();
+
+	    if (vastaus == 3) {
+	    	System.out.println("\nOikein! Paras kaupunki, heti ennen kotipaikkakuntaasi!");
+	    	pistemäärä++;
+	    } else {
+	    	System.out.println("\nVäärin! Missäs olit Afrikan maantieteen tunnilla, senkin kettu >:( !");
+	    }
+        System.out.println("\nMika ainesosa ei kuulu Boulevardier-cocktailiin? \n1) Viski\n2) Campari\n3) Rommi");
+	    vastaus = laskija.nextInt();
+
+	    if (vastaus == 3) {
+	    	System.out.println("\nOikein! Senkin alkoholisti!");
+	    	pistemäärä++;
+	    } else {
+	    	System.out.println("\nVäärin! Senkin absolutisti!");
+	    }
+	    
+	    if (pistemäärä == 5) {
+	    	System.out.println("\nArvosanasi on " + pistemäärä + "/5. Senkin hikke!");
+	    } else if (pistemäärä > 1 && pistemäärä < 5) {
+	        System.out.println("\nArvosanasi on " + pistemäärä + "/5. Olet täysin keskiverto ihminen, hyvää työtä ༼ つ ◕◕ ༽つ");
+	    } else {
+	        System.out.println("\nArvosanasi on " + pistemäärä + "/5. Yritä ees...");
+	    }
+	}
+
 	private static void ruletti() {
 		// arvotaan luku väliltä 1-6, jossa 6 tappaa sinut
 
@@ -176,7 +248,7 @@ public class Peli {
 
 	private static void peliOhi() {
 		System.out.println("\n\nPeli ohi!\n\nKiitos, kun pelasit!");
-		System.out.println("\n\n\t\t*CREDITS:*\n\nLead Developer: Eetu Kuittinen\nGameplay Designer: Miika Mononen\nSFX editor: Marlo Pietarinen\n\nSpecial thanks to Kaiffari and Jasse\n\nAll rights reserved under Tomte™ Corperation®");
+		System.out.println("\n\n\t\t*CREDITS:*\n\nLead Developer: Eetu Kuittinen\nGameplay Designer: Miika Mononen\nSFX editor: Marlo Pietarinen\n\nSpecial thanks to Kaiffari and Jasse\n\n\nAll rights reserved under Tomte™ Corperation®");
 		System.exit(0);
 	}
 
@@ -236,12 +308,16 @@ public class Peli {
         if (ekaAste > 0 && ekaAste < 4) {
         	switch (ekaAste) {
 		        case 1:
-			        System.out.println("\nHienoa! Valmistuit ylioppilaaksi ja järjestit huikeat valmistujaisjuhlat!");
+			        System.out.println("\nHyvä valinta! Lukiossa järjestetään tentti, jossa kysytään seuraavia asioita:\n");
+			        tentti();
+			        System.out.println("\n Valmistuit ylioppilaaksi ja järjestit huikeat valmistujaisjuhlat!");
 			        ekaTutkinto = "Lukio";
 		    	break;
 		        case 2:
-		           System.out.println("\nHienoa! Valmistuit haluamaasi ammattiin ja järjestit huikeat valmistujaisjuhlat!");
-			       ekaTutkinto = "Ammattikoulu";
+		        	System.out.println("\n Hieno valinta! Ammattikoulussa valitaan tentti, jossa kysytään seuraavia asioita:\n");
+		        	tentti();
+		        	System.out.println("\nHienoa! Valmistuit haluamaasi ammattiin ja järjestit huikeat valmistujaisjuhlat!");
+		        	ekaTutkinto = "Ammattikoulu";
 			    break;
 		        case 3:
 		            System.out.println("\nSenkin rotta! Et selviä elämässä näin!");
@@ -401,10 +477,10 @@ private static void ruletti2() {
 		
 		for(int i =0; i < 1; i++)
         {
-            answer = luoti.nextInt(3) + 1; // suluissa mahdollisuuksien määrä
+            answer = luoti.nextInt(4) + 1; // suluissa mahdollisuuksien määrä
         }
         if (answer == 3){                   // luku joka tappaa
-            System.out.print("\nViriti derpi moposi kulkemaan 100km/h ");
+            System.out.print("\nViritit Derbi-moposi kulkemaan 100km/h ");
             System.out.print("\nKeulit tiellä ja menetät mopon hallinnan ");
 			System.out.print("\nKaadut ja loukkaannut, jonka seurauksena halvaannut keskivartalosta alaspäin ");
             peliOhi();
