@@ -482,7 +482,7 @@ private static void ruletti2() {
         if (answer == 3){                   // luku joka tappaa
             System.out.print("\nViritit Derbi-moposi kulkemaan 100km/h ");
             System.out.print("\nKeulit tiellä ja menetät mopon hallinnan ");
-			System.out.print("\nKaadut ja loukkaannut, jonka seurauksena halvaannut keskivartalosta alaspäin ");
+			System.out.print("\nKaadut ja loukkaannut ");
             peliOhi();
         } 
 	}
