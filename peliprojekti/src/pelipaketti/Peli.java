@@ -501,7 +501,7 @@ private static void cursedRuletti() {
         }
         if (answer == 1){                   // luku joka tappaa
             System.out.print("\nTyö painaa liikaa päälle ja sairastut vakavaan masennukseen");
-            System.out.print("\nHirttäydyt yksiöösi");
+            System.out.print("\nYksiösi vie mennessään");
             peliOhi();
         } 
 	}
