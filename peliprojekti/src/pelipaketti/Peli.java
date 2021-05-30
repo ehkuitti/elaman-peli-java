@@ -22,16 +22,16 @@ public class Peli {
 		Scanner laskija = new Scanner(System.in); // lukujen lukemiseen
 
 		// Varsinainen koodi alkaa
-		System.out.println("Tervetuloa pelaamaan Tomte™ Corperationin®\n\n\t\tELÄMÄN_PELIÄ©    :)\n");
-		System.out.println("Ohjeet: Vedä aluksi console IDE:ssäsi niin isoksi kuin mahdollista. Tämä helpottaa pelaamista huomattavasti. Tämän jälkeen klikkaa \"Anna nimesi\" -rivin lopusta tyhjältä alueelta.\nVastaa pelissä kirjoittamalla numero tai sana pyydetyn mukaisesti ja painamalla sitten enteriä. Hyviä pelihetkiä toivottaa Tomten väki!\n");
-		System.out.print("Anna nimesi: ");
-		nimi = lukija.nextLine();
-		System.out.println("\n" + nimi + " on hieno nimi!");
+		System.out.println("Tervetuloa pelaamaan Tomte™ Corperationin®\n\n\t\tELÄMÄN_PELIÄ©    :)\n"); //toivotetaan pelaaja tervetulleeksi
+		System.out.println("Ohjeet: Vedä aluksi console IDE:ssäsi niin isoksi kuin mahdollista. Tämä helpottaa pelaamista huomattavasti. Tämän jälkeen klikkaa \"Anna nimesi\" -rivin lopusta tyhjältä alueelta.\nVastaa pelissä kirjoittamalla numero tai sana pyydetyn mukaisesti ja painamalla sitten enteriä. Hyviä pelihetkiä toivottaa Tomten väki!\n"); //syötetään ohjeet
+		System.out.print("Anna nimesi: "); //kysytään pelaajan nimeä
+		nimi = lukija.nextLine(); //scanneri taltio nimen
+		System.out.println("\n" + nimi + " on hieno nimi!"); //nimi tulostuu
 
 		syntymäpaikka = syntymä(); // muuttuja syntymäpaikka tulostaa kaupungin nimen
 									// peliOhi(); - metodi lopettaa pelin
 
-		if (syntymäpaikka == "Vantaa") { // Vantaa polku metodeina
+		if (syntymäpaikka == "Vantaa") { // Vantaan polku metodeina
 			lapsuus(); // Tulostaa vuosia
 			ekaAste = yhteishaku1(); // Kysyy ensimmäisen asteen tutkinnon ekaAste tulostaa tutkinnon nimen
 			ruletti3();
@@ -44,9 +44,9 @@ public class Peli {
 			} else {
 				työ2 = työura2();
             }
-            cursedRuletti();
-            lopetus();
-            peliOhi();
+            cursedRuletti(); //mahdollisuus hävitä peli vielä kerran ennen voittoa
+            lopetus(); //pelin voittamisen metodi
+            peliOhi(); //pelin lopetusmetodi
             
 		} else if (syntymäpaikka == "Oulu") { // Oulun polku metodeina
 			lapsuus();
@@ -65,7 +65,7 @@ public class Peli {
             lopetus();
             peliOhi();
                         
-		} else { // Jokaisen kysymyksen 3. vaihtoehto lopettaa pelin
+		} else { // Jokaisen kysymyksen 3. vaihtoehto lopettaa pelin (paitsi tietovisoissa)
 			System.out.print("\nEi kai nyt kukaan täysijärkinen haluaisi Turkuun syntyä...");
 			peliOhi();
 
@@ -75,15 +75,15 @@ public class Peli {
 
 	}
 	
-	private static void lopetus() {
+	private static void lopetus() { //pelinvoittamismetodi 
         System.out.println("\nSelvisit elämäsi loppuun asti, onnittelut ja pitkää ikää!\n\n\n\t*VOITIT PELIN*");
 	}
 
 	private static void tentti() {
 
 
-		int pistemäärä = 0;
-		int vastaus = 0;
+		int pistemäärä = 0; //taltioi pistemäärän
+		int vastaus = 0; //taltioi vastauksen
 
 		Scanner laskija = new Scanner (System.in);
 
@@ -92,7 +92,7 @@ public class Peli {
 
 	    if (vastaus == 2) {
 	    	System.out.println("\nOikein! Oli muuten helppo :]");
-	    	pistemäärä++;
+	    	pistemäärä++; //tämä rivi kasvattaa pistemäärää aina kun vastaus menee oikein
 	    } else {
 	    	System.out.println("\nVäärin! Eikö tämä nyt ole ihan yleistietoa... ¯\\_(ツ)_/¯");
 	    }
@@ -159,21 +159,21 @@ public class Peli {
             System.out.print("\nKuolit");
             peliOhi();
         } else {
-            System.out.print("\nSelvisit. Elämäsi jatkuu. Toistaiseksi...\n");
+            System.out.print("\nSelvisit. Elämäsi jatkuu. Toistaiseksi...\n"); //sattumia voi tulla myös myöhemmin, siksi toistaiseksi
             }
 	}
 
 	private static void ilkivalta() {
 		
-		Scanner skanneri = new Scanner (System.in);
+		Scanner skanneri = new Scanner (System.in); //luodaan oma skanneri metodiin
 		
-		ArrayList<String> lista = new ArrayList<String>();
-        String sana;
+		ArrayList<String> lista = new ArrayList<String>(); //lista sanojen tallentamista ja tulostamista varten
+        String sana; //taltioi syötteen
         System.out.println("\nPäätätte kaverisi kanssa kirjoittaa sanoja seinään. Montako sanaa tahdot kirjoittaa?");
         int maara = skanneri.nextInt();
         System.out.println("\nKirjota sanat (paina enteriä sanojen välissä): ");
 
-        for (int i = 0; i < maara + 1; i++) {
+        for (int i = 0; i < maara + 1; i++) { //silmukka pyörii, kunnes haluttu lukumäärä täyttyy
             sana = skanneri.nextLine();
             lista.add(sana); // halutut sanat listalle tulostusta varten
         }
@@ -187,20 +187,20 @@ public class Peli {
 	}
 	private static void bileet() {
 
-        int kylläEi = 0;
-		Scanner lukija = new Scanner (System.in);
+        int kylläEi = 0; //taltioi syötteen
+		Scanner lukija = new Scanner (System.in); //mahdollistaa syötteen taltioinnin
 
 		System.out.println("\nKaverisi ehdottaa ilkivaltaa.\n\nHaluatko osallistua? \n1) Kyllä\n2) En");
         kylläEi = lukija.nextInt();
 
-        while(true) {
+        while(true) { //pyörii niin kauan, kun on tosi
             if (kylläEi > 0 && kylläEi < 3){
-                switch(kylläEi){
-                    case 1:
-                    	    ilkivalta();
-                    	    break;
-                    case 2:
-                    	    System.out.println("\nHienoa, lainkuuliaista toimintaa!");
+                switch(kylläEi){ //vaihtoehdot 1 ja 2
+                    case 1: //jos kirjoittaa 1
+                    	    ilkivalta(); //toteuttaa ilkivalta-metodin
+                    	    break; //poistuu silmukasta
+                    case 2: //jos kirjoittaa 2
+                    	    System.out.println("\nHienoa, lainkuuliaista toimintaa!"); //tulostuu, jos ei osallistu ilkivaltaan
                 }
                     break;
         	} else {
@@ -212,16 +212,16 @@ public class Peli {
 
 	private static String opintosuuntaus() {
 
-		int tokaAste = 0;
+		int tokaAste = 0; //taltioi syötteen
 		Scanner lukija = new Scanner(System.in); // tekstin lukemiseen
-		String tokaTutkinto = null;
+		String tokaTutkinto = null; //merkkijono alustetaan tyhjällä arvolla
 
 		System.out.println(
 				"\nMitä tahdot opiskella korkeakoulussa?\n1) Tietojenkäsittelyä\n2) Sosiaalitieteitä\n3) Kauppatieteitä ja liiketaloutta");
 		tokaAste = lukija.nextInt();
 					
-		while(true) {
-			if (tokaAste > 0 && tokaAste < 4) {
+		while(true) { //pyörii niin kauan, että saadaan sopiva arvo
+			if (tokaAste > 0 && tokaAste < 4) { //sopivan arvon rajaaminen
 				switch(tokaAste) {
 					case 1:
 						System.out.println("\nOikein!\n");
@@ -238,28 +238,28 @@ public class Peli {
 						tokaTutkinto = "liiketalous";
 						peliOhi();
 				 	}	
-				break;
+				break; //poistutaan silmukasta
 			} else {
-				System.out.print("\nAnna luku 1-3: ");
+				System.out.print("\nAnna luku 1-3: "); //mikäli syöte ei täytä ehtoja
 				tokaAste = lukija.nextInt();
 		        }
 		    }
-		return tokaTutkinto;
+		return tokaTutkinto; //palautetaan haluttu tutkinto
         }
 
 	private static void peliOhi() {
 		System.out.println("\n\nPeli ohi!\n\nKiitos, kun pelasit!");
-		System.out.println("\n\n\t\t*CREDITS:*\n\n\nLead Developer: Eetu Kuittinen\nGameplay Designer: Miika Mononen\nSFX editor: Marlo Pietarinen\n\nSpecial thanks to Kaiffari and Jasse\n\n\nAll rights reserved under Tomte™ Corperation®");
-		System.exit(0);
+		System.out.println("\n\n\t\t*CREDITS:*\n\n\nLead Developer: Eetu Kuittinen\nGameplay Designer: Miika Mononen\nSFX editor: Marlo Pietarinen\n\nSpecial thanks to Kaiffari and Jasse\n\n\nAll rights reserved under Tomte™ Corperation®"); //lopputekstit
+		System.exit(0); //lopettaa ohjelman suorittamisen
 	}
 
 	private static void opiskeluaika() {
-		int i = 1;
+		int i = 1; //alustetaan muuttuja i arvolla 1
 
 		do {
 			System.out.println("Niin kului " + i + ". vuotesi opiskelujen parissa.");
-			i++;
-		} while (i <= 5);
+			i++; //kasvatetaan yhdellä kunnes 5
+		} while (i <= 5); //silmukka tulostaa tekstiä vuosien arvoilla 1-5
 	}
 
 	private static String yhteishaku2() {
@@ -310,13 +310,13 @@ public class Peli {
         	switch (ekaAste) {
 		        case 1:
 			        System.out.println("\nHyvä valinta! Lukiossassi järjestetään tentti, jossa kysytään seuraavia asioita (listalta puuttuvan numeron syöttäminen tulkitaan vääräksi vastaukseksi) :\n");
-			        tentti();
+			        tentti(); //lukion tietovisametodi
 			        System.out.println("\nValmistuit ylioppilaaksi ja järjestit huikeat valmistujaisjuhlat!");
 			        ekaTutkinto = "Lukio";
 		    	break;
 		        case 2:
-		        	System.out.println("\n Hieno valinta! Ammattikoulussasi järjestetään tentti, jossa kysytään seuraavia asioita (listalta puuttuvan numeron syöttäminen tulkitaan vääräksi vastaukseksi) :\n");
-		        	tentti();
+		        	System.out.println("\nHieno valinta! Ammattikoulussasi järjestetään tentti, jossa kysytään seuraavia asioita (listalta puuttuvan numeron syöttäminen tulkitaan vääräksi vastaukseksi) :\n");
+		        	koe(); //ammattikoulun tietovisametodi, eri kysymykset kuin lukiossa
 		        	System.out.println("\nHienoa! Valmistuit haluamaasi ammattiin ja järjestit huikeat valmistujaisjuhlat!");
 		        	ekaTutkinto = "Ammattikoulu";
 			    break;
@@ -336,9 +336,9 @@ public class Peli {
 	}
 
 	private static void lapsuus() {
-		System.out.println("\nLapsuutesi kuluu...");
-		for (int i = 0; i <= 15; i += 5) {
-			System.out.println("Olet nyt " + i + " vuotta vanha");
+		System.out.println("\nLapsuutesi kuluu..."); //lapsuus kuluu tulostamalla for-loopilla tekstiä viiden vuoden välein
+		for (int i = 0; i <= 15; i += 5) { //alkaa nollasta, kasvatetaan viidellä kunnes 15
+			System.out.println("Olet nyt " + i + " vuotta vanha"); //tulostetaan i:n arvo muun tulostuksen seassa
 		}
 		System.out.println("\nSeuraavaksi saat päättää mihin kouluun haet ensimmaisessä yhteishaussasi!");
 	}
@@ -349,7 +349,7 @@ public class Peli {
 		Scanner lukija = new Scanner(System.in); // tekstin lukemiseen
 		String kaupunki = null;
 
-		System.out.println("\nValitse syntymäpaikkasi:\n1) Vantaa\n2) Oulu\n3) Turku");
+		System.out.println("\nValitse syntymäpaikkasi:\n1) Vantaa\n2) Oulu\n3) Turku"); //pelaaja valitsee kotipaikkansa
 		syntymäpaikka = lukija.nextInt();
 		
 		while(true) {  
@@ -419,7 +419,7 @@ public class Peli {
 		Scanner lukija = new Scanner(System.in); // tekstin lukemiseen
 		String sosiaaliTyö = null;
 
-		System.out.println("\nMitä tahdot tehdä työksesi?\n1) Toimia kuraattorina\n2) Ajaa ambulanssia\n3) Pestä");
+		System.out.println("\nMitä tahdot tehdä työksesi?\n1) Toimia kuraattorina\n2) Ajaa ambulanssia\n3) Pestä"); //vaihtoehdot, jotka rajattu tähän työtehtävään
 		työ2 = lukija.nextInt();
 		
 		
@@ -450,7 +450,7 @@ public class Peli {
 		return sosiaaliTyö;
 	    }
 
-private static void ruletti2() {
+private static void ruletti2() { // sattumaan perustuva mahdollisuus kuolla
 		// arvotaan luku väliltä 1-6, jossa 6 tappaa sinut
 
 		int answer = 0; // tappava arvo
@@ -468,7 +468,7 @@ private static void ruletti2() {
             peliOhi();
         } 
 	}
-	private static void ruletti3() {
+	private static void ruletti3() { // sattumaan perustuva mahdollisuus kuolla
 		// arvotaan luku väliltä 1-6, jossa 6 tappaa sinut
 
 		int answer = 0; // tappava arvo
@@ -488,7 +488,7 @@ private static void ruletti2() {
         } 
 	}
 
-private static void cursedRuletti() {
+private static void cursedRuletti() { // sattumaan perustuva mahdollisuus kuolla
 		// arvotaan luku väliltä 1-6, jossa 6 tappaa sinut
 
 		int answer = 0; // tappava arvo
@@ -506,4 +506,69 @@ private static void cursedRuletti() {
             peliOhi();
         } 
 	}
+
+
+private static void koe() { //ammattikoulun tietovisa
+
+
+	int pistemäärä = 0;
+	int vastaus = 0;
+
+	Scanner laskija = new Scanner (System.in);
+
+    System.out.println("Milloin ensimmäinen tietokone keksittiin?\n1) 1929-1931\n2) 1936-1938\n3) 1941-1943");
+    vastaus = laskija.nextInt();
+
+    if (vastaus == 2) {
+    	System.out.println("\nOikein! Olipa helppo, vai mitä? :]");
+    	pistemäärä++; //arvoa kasvatetaan aina oikean vastauksen osuessa kohdalle
+    } else {
+    	System.out.println("\nVäärin! Eikö tämä nyt ole ihan yleistietoa... ¯\\_(ツ)_/¯");
+    }
+    
+    System.out.println("\nMissä sijaitsee maailman vanhin elossa oleva puu?? \n1) Yhdysvalloissa\n2) Kanadassa\n3) Saksassa");
+    vastaus = laskija.nextInt();
+
+    if (vastaus == 1) {
+    	System.out.println("\nOikein! Puun nimi on Methuselah ja se sijaitsee Kalifornian osavaltiossa.");
+    	pistemäärä++;
+    } else {
+    	System.out.println("\nVäärin! Aika kehittää puutietouttasi =)");
+    }
+    System.out.println("\nIlman laskinta: Paljonko on 34% 426:sta? \n1) 144,84\n2) 152,61\n3) 159,87");
+    vastaus = laskija.nextInt();
+
+    if (vastaus == 1) {
+    	System.out.println("\nOikein! Matikkapäätäkin löytyy!");
+    	pistemäärä++;
+    } else {
+    	System.out.println("\nVäärin! Ensi kerralla nukut vähemmän matikantunnilla");
+    }
+    System.out.println("\nMaantietoa: Mikä on Australian pääkaupunki? \n1) Wellington\n2) Sydney\n3) Canberra");
+    vastaus = laskija.nextInt();
+
+    if (vastaus == 3) {
+    	System.out.println("\nOikein! Tämä oli paha!");
+    	pistemäärä++;
+    } else {
+    	System.out.println("\nEipä ollu! Wellington on Uuden-Seelannin pääkaupunki ja Sydney on Austraalian isoin kaupunki, muttei pääkaupunki.");
+    }
+    System.out.println("\nMikä cocktail valmistetaan rommista, kookoskermasta, ja ananasmehusta? \n1) Valkovenäläinen \n2) Bellini\n3) Piña Colada");
+    vastaus = laskija.nextInt();
+
+    if (vastaus == 3) {
+    	System.out.println("\nOikein! Maistuu, maistuu!");
+    	pistemäärä++;
+    } else {
+    	System.out.println("\nVäärin! Et taida olla alkoholin perään?");
+    }
+    
+    if (pistemäärä == 5) {
+    	System.out.println("\nArvosanasi on " + pistemäärä + "/5. Senkin hikke!");
+    } else if (pistemäärä > 1 && pistemäärä < 5) {
+        System.out.println("\nArvosanasi on " + pistemäärä + "/5. Olet täysin keskiverto ihminen, hyvää työtä ༼ つ ◕◕ ༽つ");
+    } else {
+        System.out.println("\nArvosanasi on " + pistemäärä + "/5. Yritä ees...");
+    }
+}
 }
