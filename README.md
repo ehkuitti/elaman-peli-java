@@ -1,21 +1,16 @@
 # elaman-peli-java
-## The Game Of Life - Elämän Peli™ -komentorivipeliprojekti
+## The Game Of Life - command line game project
 
-Tämä projekti oli Laurean Ohjelmoinnin perusteet -kurssin lopputyö. Kurssilla opeteltiin ohjelmoinnin perusteita käyttämällä Java-ohjelmointikieltä ja
-Eclipse-kehitysympäristöä (*IDE*). 
+This project was me and my project team's final project for the Laurea University of Applied Sciences' Fundamentals of Programming course. The course was about the basics of programming using the Java programming language and Eclipse development environment (*IDE*).
 
-## Projektikuvaus
+## Project description
 
-Tämä projektilopputyö on terminaalissa pelattava peli. Pelin ideana on "pelata elämää". Peli kysyy aluksi pelaajan nimeä ja minne pelaaja haluaa syntyä. Peli
-tervehtii pelaajaa pelin alettua. Peli etenee ja pelaaja tekee erilaisia päätöksiä elämästään, kuten mitä haluaa opiskella missäkin vaiheessa elämäänsä. Tämän
-lisäksi vastaan voi tulla kokeita kouluissa tietovisan muodossa kuin myös sattumia, joissa kuolee (peli loppuu). 
+This project is a command-line based game. The idea of the game is to "play life". The game initially asks the player's name and where the player wants to be born. Then the game greets the player when the game starts. The game progresses and the player makes different decisions about his life, such as what he/she wants to study at each stage of his/her life. On top of this, you may encounter tests in schools in the form of quizzes, as well as incidents where you die (= the game ends).
 
-## Toteutus
+## Implementation
 
-Pelin valintavaihtoehdot on toteutettu if-elseif-else ja switch -rakenteita käyttäen sen mukaan, minkä koimme parhaaksi missäkin tilanteessa. Tämän lisäksi
-erilaisten sarjojen, kuten vuosien kulumisen tulostus, on hoidettu käyttäen while, do while ja for-silmukoita. Pelissä on käytetty myös yhtä yksittäistä listaa
-(array) peräkkäisten sanojen tallentamiseen ja niiden tulostamiseen loopissa. 
+The different life paths have been implemented using if-else and switch control structures, according to what we felt was best in any given situation. On top of this, the printing of various number series, such as the passage of years, has been handled using while, do while and for loops. This was done to demonstrate the usage of each. The game also uses an array to store consecutive words and print them in a loop.
 
-## Osallistujat
+## Participants
 
-Teimme tämän projektin yhdessä ryhmätyönä Laurea-ammattikorkeakoulussa. Minun ([ehkuitti](https://github.com/ehkuitti)) lisäkseni ryhmään kuuluivat [MabloPescobar](https://github.com/MabloPescobar) ja [monomiq](https://github.com/monomiq), jotka molemmat työskentelivät aktiivisesti projektin parissa. Tämän lisäksi iso kiitos [jerepui](https://github.com/jerepui):lle, joka auttoi meitä projektin hankalien rakenteiden kanssa, kuten arrayn täyttämisessä ja rakenteiden yli iteroinnissa. Emme olisi saaneet näitä toimimaan ilman hänen apuaan. 
+We did this project together as a group project at Laurea University of Applied Sciences. In addition to me ([ehkuitti](https://github.com/ehkuitti)), the group included [MabloPescobar](https://github.com/MabloPescobar) and [monomiq](https://github.com/monomiq), both of whom worked actively on the project. In addition to this, a big thank you to [jerepui](https://github.com/jerepui), who helped us with the difficult structures of the project, such as filling the array and iterating over the structures. We couldn't have made these to work without his help.
