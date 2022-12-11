@@ -1,5 +1,5 @@
 # the-game-of-life-java
-## The Game Of Life - command line game project
+## The Game Of Life - a command-line based game project
 
 This project was me and my project team's final project for the Laurea University of Applied Sciences' Fundamentals of Programming course. The course was about the basics of programming using the Java programming language and Eclipse development environment (*IDE*).
 
